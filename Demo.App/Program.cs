@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Configuration;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Messages.Commands;
 using Proto;
 using Proto.Cluster;
 using Proto.Cluster.Consul;
+using Proto.Mailbox;
 using Proto.Persistence;
 using Proto.Persistence.SqlServer;
 using Proto.Remote;
@@ -18,7 +20,7 @@ namespace StreamstoneDemo.App
     {
         static void Main(string[] args)
         {
-
+            Serialization.RegisterFileDescriptor(CommandsReflection.Descriptor);
             var container = new Container();
             container.Configure(c =>
             {
@@ -37,17 +39,16 @@ namespace StreamstoneDemo.App
             });
 
             Remote.RegisterKnownKind("Todo", Actor.FromProducer(() => container.GetInstance<Todo>()));
-            
-            Remote.Start("127.0.0.1", 12000);
+
+            Remote.Start("127.0.0.1", int.Parse(ConfigurationManager.AppSettings["clusterport"]));
             Cluster.Start("MyCluster", new ConsulProvider(new ConsulProviderOptions()));
 
+            //var createTodo = new CreateTodo { AggregateId = Guid.NewGuid().ToString(), Name = "local Todo" };
+            //var complete = new CompleteTodo { AggregateId = createTodo.AggregateId };
+            //var a = Actor.SpawnNamed(Actor.FromProducer(() => container.GetInstance<Todo>()), createTodo.AggregateId);
 
-            var createTodo = new CreateTodo { AggregateId = Guid.NewGuid().ToString(), Name = "Remote Todo" };
-            var complete = new CompleteTodo { AggregateId = createTodo.AggregateId };
-            var a = Actor.SpawnNamed(Actor.FromProducer(() => container.GetInstance<Todo>()), createTodo.AggregateId);
-
-            a.Tell(createTodo);
-            a.Tell(complete);
+            //a.Tell(createTodo);
+            //a.Tell(complete);
 
             Console.ReadLine();
         }

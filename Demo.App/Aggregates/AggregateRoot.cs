@@ -51,6 +51,8 @@ namespace StreamstoneDemo.App.Aggregates
             }
 
             var messageType = context.Message.GetType();
+            Console.WriteLine($"Got a message of type {messageType.Name}");
+
             if (_handleMethods.ContainsKey(messageType))
                 _handleMethods[messageType].Invoke(this, new [] {context.Message});
             else 

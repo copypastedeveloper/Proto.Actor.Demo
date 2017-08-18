@@ -51,4 +51,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(SolutionDir)\packages\Google.Protobuf.Tools.3.3.0\tools\windows_x64\protoc.exe" -I="$(ProjectDir)\Commands" --csharp_out="$(ProjectDir)\Commands" "$(ProjectDir)\Commands\commands.proto"</PreBuildEvent>
+  </PropertyGroup>
 </Project>
