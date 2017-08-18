@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.App", "Demo.App\Demo.App.csproj", "{2C3D1F50-91E4-4EC0-9381-CABBB5459230}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteTodoAdder", "RemoteTodoAdder\RemoteTodoAdder.csproj", "{07575337-EC0E-44FF-B0D2-077E3226EB58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messages", "Messages\Messages.csproj", "{12C85EAE-831E-4C9C-BDB0-E24D6E4B1A46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C3D1F50-91E4-4EC0-9381-CABBB5459230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C3D1F50-91E4-4EC0-9381-CABBB5459230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C3D1F50-91E4-4EC0-9381-CABBB5459230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C3D1F50-91E4-4EC0-9381-CABBB5459230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07575337-EC0E-44FF-B0D2-077E3226EB58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07575337-EC0E-44FF-B0D2-077E3226EB58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07575337-EC0E-44FF-B0D2-077E3226EB58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07575337-EC0E-44FF-B0D2-077E3226EB58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12C85EAE-831E-4C9C-BDB0-E24D6E4B1A46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12C85EAE-831E-4C9C-BDB0-E24D6E4B1A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12C85EAE-831E-4C9C-BDB0-E24D6E4B1A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12C85EAE-831E-4C9C-BDB0-E24D6E4B1A46}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

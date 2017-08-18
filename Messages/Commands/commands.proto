@@ -1,0 +1,13 @@
+﻿syntax = "proto3";
+package commands;
+
+option csharp_namespace = "Messages.Commands";
+
+message CreateTodo {
+	string Name = 1;
+	string AggregateId = 2;
+}
+
+message CompleteTodo {
+	string AggregateId = 2;
+}
